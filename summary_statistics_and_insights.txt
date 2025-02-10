@@ -1,0 +1,63 @@
+Summary Statistics:
+    Title           Member.Organization      Date            Countries     
+ Length:7           Length:7            Min.   :2020-10-07   Mode:logical  
+ Class :character   Class :character    1st Qu.:2021-08-09   NA's:7        
+ Mode  :character   Mode  :character    Median :2021-12-08                 
+                                        Mean   :2022-01-08                 
+                                        3rd Qu.:2022-06-11                 
+                                        Max.   :2023-05-09                 
+   Summary            Content             Topics          Working.Groups    
+ Length:7           Length:7           Length:7           Length:7          
+ Class :character   Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+                                                                            
+                                                                            
+                                                                            
+   Sectors          Funding.Type        Other.Tags           Author         
+ Length:7           Length:7           Length:7           Length:7          
+ Class :character   Class :character   Class :character   Class :character  
+ Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+                                                                            
+                                                                            
+                                                                            
+    Status              iso3                Year     
+ Length:7           Length:7           Min.   :2020  
+ Class :character   Class :character   1st Qu.:2021  
+ Mode  :character   Mode  :character   Median :2021  
+                                       Mean   :2021  
+                                       3rd Qu.:2022  
+                                       Max.   :2023  
+
+
+Activities by Funding Type:
+  "Funding Type" n
+1   Funding Type 7
+
+
+Activities by Sector:
+# A tibble: 15 × 2
+   Sectors                                     n
+   <chr>                                   <int>
+ 1 Agriculture                                 2
+ 2 Education                                   2
+ 3 Local Economic Development                  2
+ 4 COVID-19 Response                           1
+ 5 Civil Society &amp; Advocacy                1
+ 6 Conflict Mitigation                         1
+ 7 Environment                                 1
+ 8 Family Planning and Reproductive Health     1
+ 9 Financial Sector                            1
+10 Global Health                               1
+11 Maternal and Child Health                   1
+12 Protection                                  1
+13 Reconciliation &amp; Peacebuilding          1
+14 Sanitation &amp; Hygiene (WASH)             1
+15 Water                                       1
+
+
+Activities by Year:
+  Year n
+1 2021 3
+2 2022 2
+3 2020 1
+4 2023 1

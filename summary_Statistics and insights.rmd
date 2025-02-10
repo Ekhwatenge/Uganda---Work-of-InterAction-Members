@@ -1,0 +1,79 @@
+---
+title: "Analysis of Uganda Member Data"
+author: "Elvira Khwatenge"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(lubridate)
+```
+
+## Data Loading and Cleaning
+
+```{r}
+data <- read.csv("member_data_uga.csv", stringsAsFactors = FALSE)
+data <- data %>%
+filter(Title != "#activity+title") %>%
+mutate(Date = ymd(Date),
+Year = year(Date))
+```
+
+## Summary Statistics
+```{r}
+summary(data)
+```
+
+
+## Analysis by Funding Type
+```{r}
+funding_type_count <- data %>%
+count("Funding Type") %>%
+arrange(desc(n))
+print(funding_type_count)
+ggplot(funding_type_count, aes(x = reorder("Funding Type", -n), y = n)) +
+geom_bar(stat = "identity", fill = "skyblue") +
+theme_minimal() +
+labs(title = "Activities by Funding Type",
+x = "Funding Type",
+y = "Count") +
+theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+## Analysis by Sector
+```{r}
+sector_count <- data %>%
+separate_rows(Sectors, sep = ", ") %>%
+count(Sectors) %>%
+arrange(desc(n))
+print(sector_count)
+ggplot(sector_count, aes(x = reorder(Sectors, -n), y = n)) +
+geom_bar(stat = "identity", fill = "lightgreen") +
+theme_minimal() +
+labs(title = "Activities by Sector",
+x = "Sector",
+y = "Count") +
+theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+## Analysis by Year
+
+```{r}
+year_count <- data %>%
+count(Year) %>%
+arrange(desc(n))
+print(year_count)
+ggplot(year_count, aes(x = Year, y = n)) +
+geom_bar(stat = "identity", fill = "salmon") +
+theme_minimal() +
+labs(title = "Activities by Year",
+x = "Year",
+y = "Count")
+```
+
+
